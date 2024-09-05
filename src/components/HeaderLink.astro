@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { twMerge } from 'tailwind-merge'
+
+interface Props extends HTMLAttributes<'a'> {
+  title: string
+}
+
+const { href, title, ...props } = Astro.props
+---
+
+<a
+  href={href}
+  class={twMerge(
+    'text-neutral-600 box-border pb-[2px] hover:text-base-white hover:bg-gradient-to-r from-primary/0 via-primary to-primary/0',
+    Astro.props.class,
+  )}
+  {...props}
+>
+  <div class="py-3 px-2 bg-neutral-900">{title}</div>
+</a>
