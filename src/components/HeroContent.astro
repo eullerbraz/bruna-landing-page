@@ -1,0 +1,16 @@
+---
+import { twMerge } from 'tailwind-merge'
+import HeroInfo from './HeroInfo.astro'
+import HeroImages from './HeroImages.astro'
+---
+
+<div
+  class={twMerge(
+    'flex justify-between items-center gap-20 h-full',
+    Astro.props.class,
+  )}
+  {...Astro.props}
+>
+  <HeroInfo />
+  <HeroImages />
+</div>

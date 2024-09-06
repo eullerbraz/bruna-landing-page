@@ -1,0 +1,26 @@
+---
+import { twMerge } from 'tailwind-merge'
+import Hat from './Hat.astro'
+import LinkButton from './LinkButton.astro'
+---
+
+<div
+  class={twMerge('flex flex-col gap-6 max-w-[480px]', Astro.props.class)}
+  {...Astro.props}
+>
+  <div class="flex flex-col gap-4">
+    <Hat />
+    <div class="flex flex-col gap-2">
+      <h1 class="text-6xl text-base-white font-bold">Bruna Moraes</h1>
+      <p class="text-lg text-neutral-200 font-normal">
+        +2 anos de experiência em produtos digitais. Foco em UI design e
+        experiência do usuário
+      </p>
+    </div>
+  </div>
+
+  <div class="flex gap-3">
+    <LinkButton href="#projects" title="Saiba mais" />
+    <LinkButton href="#contact" title="Vamos conversar" variant="secondary" />
+  </div>
+</div>

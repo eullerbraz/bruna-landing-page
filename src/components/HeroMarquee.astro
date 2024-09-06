@@ -1,0 +1,39 @@
+---
+import { twMerge } from 'tailwind-merge'
+import HeroMarqueeItem from './HeroMarqueeItem.astro'
+---
+
+<div
+  class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_rgb(18,_19,_22)_30%,_rgb(18,_19,_22)_70%,transparent_100%)] py-12"
+>
+  <ul
+    class={twMerge(
+      'flex items-center justify-center animate-infinite-scroll whitespace-nowrap',
+      Astro.props.class,
+    )}
+    {...Astro.props}
+  >
+    <HeroMarqueeItem text="Figma" />
+    <HeroMarqueeItem text="Experiência do usuário" />
+    <HeroMarqueeItem text="UI Design" />
+    <HeroMarqueeItem text="UX Design" />
+    <HeroMarqueeItem text="Research" />
+    <HeroMarqueeItem text="Teste de usabiilidade" />
+  </ul>
+
+  <ul
+    class={twMerge(
+      'flex items-center justify-center animate-infinite-scroll whitespace-nowrap',
+      Astro.props.class,
+    )}
+    aria-hidden="true"
+    {...Astro.props}
+  >
+    <HeroMarqueeItem text="Figma" />
+    <HeroMarqueeItem text="Experiência do usuário" />
+    <HeroMarqueeItem text="UI Design" />
+    <HeroMarqueeItem text="UX Design" />
+    <HeroMarqueeItem text="Research" />
+    <HeroMarqueeItem text="Teste de usabiilidade" />
+  </ul>
+</div>

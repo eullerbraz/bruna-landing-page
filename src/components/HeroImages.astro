@@ -1,0 +1,35 @@
+---
+import Profile from '../../public/hero/profile.png'
+import Arrow from '../../public/hero/arrow.svg'
+import Grid from '../../public/hero/grid.svg'
+import Figma1 from '../../public/hero/figma-1.svg'
+import Figma2 from '../../public/hero/figma-2.svg'
+import Figma3 from '../../public/hero/figma-3.svg'
+---
+
+<div
+  class="bg-no-repeat bg-cover w-full max-w-5xl relative h-full"
+  style=`background-image: url(${Grid.src});`
+>
+  <img
+    src={Figma1.src}
+    alt="Figma settings"
+    class="h-[98%] absolute left-24 bottom-0"
+  />
+  <img
+    src={Profile.src}
+    alt="Image Profile"
+    class="w-[582px] absolute left-0 right-0 bottom-0 mx-auto"
+  />
+  <img
+    src={Figma2.src}
+    alt="Figma settings 2"
+    class="w-64 absolute right-0 bottom-6 backdrop-blur-xl"
+  />
+  <img
+    src={Figma3.src}
+    alt="Figma settings 3"
+    class="absolute left-10 bottom-10"
+  />
+  <img src={Arrow.src} alt="Arrow" class="w-24 absolute right-48 top-24" />
+</div>

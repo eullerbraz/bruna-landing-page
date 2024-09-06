@@ -1,0 +1,13 @@
+---
+import { twMerge } from 'tailwind-merge'
+import HeroContent from './HeroContent.astro'
+import HeroMarquee from './HeroMarquee.astro'
+---
+
+<section
+  class={twMerge('h-[calc(100vh-114px-130px)]', Astro.props.class)}
+  {...Astro.props}
+>
+  <HeroContent />
+  <HeroMarquee />
+</section>
