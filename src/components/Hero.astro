@@ -5,7 +5,7 @@ import HeroMarquee from './HeroMarquee.astro'
 ---
 
 <section
-  class={twMerge('h-[calc(100vh-114px-130px)]', Astro.props.class)}
+  class={twMerge('h-[calc(100vh-114px)] flex flex-col', Astro.props.class)}
   {...Astro.props}
 >
   <HeroContent />
