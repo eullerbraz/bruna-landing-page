@@ -1,0 +1,20 @@
+---
+import { twMerge } from 'tailwind-merge'
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'span'> {
+  title: string
+}
+
+const { title, ...props } = Astro.props
+---
+
+<span
+  class={twMerge(
+    'text-base-white text-xs/normal font-normal px-3 py-0.5 bg-neutral-800 rounded-full',
+    Astro.props.class,
+  )}
+  {...props}
+>
+  {title}
+</span>

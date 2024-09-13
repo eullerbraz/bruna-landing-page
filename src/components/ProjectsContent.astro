@@ -1,0 +1,25 @@
+---
+import { twMerge } from 'tailwind-merge'
+import Hat from './Hat.astro'
+import ProjectsCaroulsel from './ProjectsCaroulsel.astro'
+---
+
+<div
+  class={twMerge(
+    'flex justify-between items-center gap-20 h-full',
+    Astro.props.class,
+  )}
+  id="projects"
+  {...Astro.props}
+>
+  <div class="flex flex-col w-full items-center gap-10">
+    <div class="flex flex-col w-full items-center gap-4">
+      <Hat text="Projetos" />
+      <h2 class="text-base-white text-5xl/normal font-bold">
+        Veja meus projetos
+      </h2>
+    </div>
+
+    <ProjectsCaroulsel />
+  </div>
+</div>

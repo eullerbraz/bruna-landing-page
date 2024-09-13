@@ -1,0 +1,39 @@
+---
+import { twMerge } from 'tailwind-merge'
+import ProjectCard from './ProjectCard.astro'
+import AdotaPet from '../../public/projects/adota-pet.png'
+import Valentinas from '../../public/projects/valentinas.png'
+import Crypto from '../../public/projects/crypto.png'
+---
+
+<div
+  class={twMerge('flex flex-col items-center gap-10', Astro.props.class)}
+  {...Astro.props}
+>
+  <div class="flex w-full items-center gap-14">
+    <ProjectCard
+      imageSrc={AdotaPet.src}
+      title="Adota Pet"
+      description="Encontre seu melhor amigo e adote de forma simplificada com o aplicativo Adota Pet!"
+      date={new Date(2023, 4, 30)}
+      minutesToRead={3}
+    />
+    <ProjectCard
+      imageSrc={Valentinas.src}
+      title="Valentinas"
+      description="Como estimular a liderança feminina nas empresas? Conheça o aplicativo Valentinas!"
+      date={new Date(2023, 2, 8)}
+      minutesToRead={5}
+    />
+    <ProjectCard
+      imageSrc={Crypto.src}
+      title="Crypto"
+      description="Compra e venda de NFTs? Conheça o Crypto, meu aplicativo de marketplace de NFTs"
+      date={new Date(2022, 4, 29)}
+      minutesToRead={2}
+    />
+  </div>
+  <div class="w-48 h-1 bg-neutral-800 rounded">
+    <div class="w-1/2 bg-primary h-full rounded"></div>
+  </div>
+</div>

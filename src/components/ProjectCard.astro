@@ -1,0 +1,61 @@
+---
+import { twMerge } from 'tailwind-merge'
+import type { HTMLAttributes } from 'astro/types'
+import ProjectTag from './ProjectTag.astro'
+
+interface Props extends HTMLAttributes<'a'> {
+  imageSrc: string
+  title: string
+  description: string
+  date: Date
+  minutesToRead: number
+}
+
+const { imageSrc, title, description, date, minutesToRead, ...props } =
+  Astro.props
+
+const formatter = new Intl.DateTimeFormat('pt-BR', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+})
+const formattedDate = formatter.format(date)
+---
+
+<div
+  class={twMerge(
+    'border border-neutral-700 p-10 rounded-xl',
+    Astro.props.class,
+  )}
+  {...props}
+>
+  <div class="flex flex-col gap-12 w-[22rem]">
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-col w-full gap-6">
+        <img class="w-full h-[12.5rem]" src={imageSrc} alt={title} />
+
+        <div class="flex gap-4">
+          <ProjectTag title="Aplicativo" />
+          <ProjectTag title="UX" />
+          <ProjectTag title="UI" />
+        </div>
+      </div>
+      <div>
+        <h3 class="text-base-white text-[2rem]/[1.5rem] font-medium">
+          {title}
+        </h3>
+        <p class="text-neutral-100 text-base font-normal">
+          {description}
+        </p>
+      </div>
+    </div>
+
+    <div class="flex gap-3 text-neutral-50 text-sm font-normal">
+      <span>
+        {formattedDate}
+      </span>
+      <span>• </span>
+      <span>{minutesToRead} min de leitura </span>
+    </div>
+  </div>
+</div>

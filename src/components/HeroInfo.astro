@@ -9,7 +9,7 @@ import LinkButton from './LinkButton.astro'
   {...Astro.props}
 >
   <div class="flex flex-col gap-4">
-    <Hat />
+    <Hat text="Olá, eu sou" />
     <div class="flex flex-col gap-2">
       <h1 class="text-6xl text-base-white font-bold">Bruna Moraes</h1>
       <p class="text-lg text-neutral-200 font-normal">
@@ -21,6 +21,6 @@ import LinkButton from './LinkButton.astro'
 
   <div class="flex gap-3">
     <LinkButton href="#projects" title="Saiba mais" />
-    <LinkButton href="#contact" title="Vamos conversar" variant="secondary" />
+    <LinkButton href="#contact" title="Vamos conversar" variant="tertiary" />
   </div>
 </div>
