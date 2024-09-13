@@ -1,0 +1,33 @@
+---
+import { twMerge } from 'tailwind-merge'
+import Hat from './Hat.astro'
+import LinkButton from './LinkButton.astro'
+---
+
+<div
+  class={twMerge(
+    'flex flex-col items-center max-w-4xl gap-10',
+    Astro.props.class,
+  )}
+  {...Astro.props}
+>
+  <div class="flex flex-col items-center gap-4">
+    <Hat text="Contato" variant="secondary" />
+    <div class="flex flex-col gap-3 items-center">
+      <h2 class="text-base-white text-5xl/normal font-bold">
+        Vamos bater um papo?
+      </h2>
+      <p
+        class="text-neutral-200 text-xl font-normal text-center tracking-wider"
+      >
+        Minha missão é impactar negócios e usuários, melhorando e simplificando
+        o uso das plataformas. Se isso faz sentido pra você, vamos marcar uma
+        call
+      </p>
+    </div>
+  </div>
+  <div class="flex gap-3">
+    <LinkButton href="" title="Entre em contato" />
+    <LinkButton href="" title="Baixar currículo" variant="tertiary" />
+  </div>
+</div>

@@ -11,6 +11,10 @@ export default {
           black: '#000000',
         },
         primary: '#E51F7A',
+        pink: {
+          500: '#902158',
+          600: '#B1658C',
+        },
         neutral: {
           50: '#FAFAFA',
           100: '#EDEFF2',

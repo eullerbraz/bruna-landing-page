@@ -1,0 +1,19 @@
+---
+import { twMerge } from 'tailwind-merge'
+import ProjectsContent from './ProjectsContent.astro'
+import ContactContent from './ContactContent.astro'
+---
+
+<section class={twMerge('px-[10%] py-16', Astro.props.class)} {...Astro.props}>
+  <div
+    class="box-border p-[2px] pb-0 bg-gradient-to-b from-neutral-700 to-neutral-700/0 rounded-t-3xl"
+  >
+    <div class="p-3 bg-neutral-900 rounded-t-3xl">
+      <div
+        class="flex justify-center bg-gradient-to-b from-primary/60 to-neutral-900/0 pt-20 pb-32 rounded-t-xl"
+      >
+        <ContactContent />
+      </div>
+    </div>
+  </div>
+</section>
