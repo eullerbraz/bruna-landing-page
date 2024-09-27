@@ -2,6 +2,8 @@
 import { twMerge } from 'tailwind-merge'
 import Hat from './Hat.astro'
 import LinkButton from './LinkButton.astro'
+
+import Resume from '../../public/resume/bruna-moraes-resume.pdf'
 ---
 
 <div
@@ -31,6 +33,11 @@ import LinkButton from './LinkButton.astro'
       href="mailto:brunasthephany.moraes@gmail.com"
       title="Entre em contato"
     />
-    <LinkButton href="" title="Baixar currículo" variant="tertiary" />
+    <LinkButton
+      href={Resume}
+      title="Baixar currículo"
+      variant="tertiary"
+      download="bruna-moraes"
+    />
   </div>
 </div>
